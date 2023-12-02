@@ -1,0 +1,15 @@
+.search-dialog:hover {
+    background: #424242;
+    border: none !important;
+}
+.search-dialog-focus {
+    background: #424242;
+    border: none !important;
+}
+
+
+.search-dialog{
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}

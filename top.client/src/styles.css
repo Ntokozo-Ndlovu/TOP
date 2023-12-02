@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+.bg-background-primary{
+ background: #252525;
+}
+
+.bg-background-secondary{
+ background: #191919;
+}
+
+.bg-background-tertiary{
+    background: #424242;
+   }
+
+.accent-color {
+background: #183D3D;
+}
+
+.text-color-default{
+    color:white
+}

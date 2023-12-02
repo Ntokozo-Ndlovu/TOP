@@ -1,0 +1,4 @@
+<div  [tabIndex]="1" id="search-dialog" [ngClass]="focus?'list-group search-dialog search-dialog-focus border shadow p-1 mb-5 rounded':'list-group search-dialog border shadow p-1 mb-5 rounded'">      
+    <div class="row list-group-item list-group-item-action  text-light border-0  bg-transparent m-0"><div class="col d-flex p-0 bg-transparent"><input class="form-control border-0 shadow-none p-0 bg-transparent text-light" (focusout)="setFocus()" (focus)="setFocus()" formControlName="search-query" id="search-query" (keydown)="onSearchInput($event)" name="search-query" type="text"></div></div>
+    <div *ngFor="let item of generatedSearchQuery | async"  class="row text-light  border-0 list-group-item list-group-item-action bg-transparent m-0" ><div class="col text-start p-0 bg-transparent">{{item.search}}</div></div>
+</div>
