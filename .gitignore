@@ -1,0 +1,13 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/TOP.API/bin/Debug/net6.0
+/TOP.API/obj
+/top.client/.vscode
+/top.client/obj/Debug
+/TOP.Data/bin/Debug/net6.0
+/TOP.Data/obj
+/TOP.Server/bin/Debug/net6.0
+/TOP.Server/obj
+/.vs

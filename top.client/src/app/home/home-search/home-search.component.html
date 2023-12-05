@@ -1,0 +1,25 @@
+<div class="bg-background-primary text-light" [style]="{height:'100vh'}">
+    <div class="d-flex container justify-content-center align-items-center" [style]="{ height:'90%', width:'60%'}">
+       <div class="justify-content-center align-items-center" [style]="{height:'25%', width:'60%'}">
+        <form [formGroup]="searchFormGroup" (submit)="onSearch()">
+            <div class="row w-100">
+                <div class="col"></div>
+                <h1>TOP</h1><h5>search</h5>
+            </div>
+            <div class="row justify-content-center h-100 w-100">
+                <app-search (searchQuery)="setSearchQuery($event)"></app-search>
+            </div>
+            <div class="row w-100 justify-content-center my-3">
+                <div class="col-4">
+                    <button type="submit" class="btn btn-lg btn-width accent-color text-light">Search</button>
+                </div>
+            </div>
+        </form>
+       </div>
+     </div>
+    <div  class="d-flex justify-content-center align-items-center bg-background-secondary w-100" [style]="{height:'10%'}">
+        <div class="p-2">
+            <p>Footer stuff</p>
+        </div>
+    </div>    
+</div>
