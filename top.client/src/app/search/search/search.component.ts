@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormBuilder,FormGroup } from '@angular/forms';
+import { Component,EventEmitter,Input,Output } from '@angular/core';
+import { FormBuilder,FormControl,FormGroup } from '@angular/forms';
 import { BehaviorSubject } from 'rxjs';
 import { SearchQuery } from 'src/app/core/models';
 import { Router } from '@angular/router';
@@ -10,14 +10,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-  searchFormGroup:FormGroup;
+  searchController:FormControl;
   generatedSearchQuery:BehaviorSubject<SearchQuery[]> = new BehaviorSubject<SearchQuery[]>([]);//limit to 4
-  focus:boolean = false;
 
+  @Output() searchQuery:EventEmitter<string> = new EventEmitter<string>();
+
+  focus:boolean = false;
   searchQueryInputBackgroundDark:boolean = false;
  
   constructor(private formBuiler:FormBuilder, private router:Router){
-    this.searchFormGroup = this.formBuiler.group({"search-query":["",]});
+    this.searchController = new FormControl("");
+    //this.searchFormGroup = this.formBuiler.group({"search-query":["",]});
   }
 
   
@@ -25,12 +28,13 @@ export class SearchComponent {
     if(event.target.value != ''){
       this.searchQueryInputBackgroundDark = !this.searchQueryInputBackgroundDark;
       this.generatedSearchQuery.next([{search:"University"},{search:"How to make money"},{search:"Everything that matter"}]);
-      console.log("Event: ", this.searchFormGroup.value)  
+      console.log('search query: ',this.searchController.value);
+      this.searchQuery.emit(this.searchController.value)  
     }
     else {
       this.searchQueryInputBackgroundDark = !this.searchQueryInputBackgroundDark;   
       this.generatedSearchQuery.next([]);
-      console.log("Event: ", this.searchFormGroup.value)
+      console.log("Event: ", this.searchController.value)
     }
   }
 

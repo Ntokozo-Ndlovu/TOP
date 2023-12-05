@@ -7,7 +7,7 @@
                 <h1>TOP</h1><h5>search</h5>
             </div>
             <div class="row justify-content-center h-100 w-100">
-                <app-search></app-search>
+                <app-search (searchQuery)="setSearchQuery($event)"></app-search>
             </div>
             <div class="row w-100 justify-content-center my-3">
                 <div class="col-4">

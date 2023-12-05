@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { SearchResponse } from 'src/app/core/interface/http';
 import { SearchResult } from 'src/app/core/models';
-
+import { GatewayService } from 'src/app/core/services/gateway.service';
+import {  } from 'rxjs/operators'
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-search-results-list',
   templateUrl: './search-results-list.component.html',
   styleUrls: ['./search-results-list.component.css']
 })
 export class SearchResultsListComponent {
-searchResults:SearchResult[] = [{title:'ntokozo',description:'loves school so much',url:'yes I love it'},{title:'ntokozo',description:'loves school so much',url:'yes I love it'}]
-
+  @Input() searchResults?:Observable<SearchResult[]>;
 }

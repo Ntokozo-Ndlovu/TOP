@@ -9,7 +9,7 @@ namespace TOP.API.Responses
 {
     public class SearchResponse
     {
-        public List<PageEntity> searchResults;
+        public List<PageEntity> searchResults { get; set; }
     }
 
 }
